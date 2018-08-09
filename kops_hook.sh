@@ -25,12 +25,12 @@ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 apt-get update
-wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_18.03.1~ce-0~ubuntu_amd64.deb
+wget https://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_18.06.0~ce~3-0~ubuntu_amd64.deb
 while sudo fuser while sudo fuser /var/lib/dpkg/lock /var/lib/apt/lists/lock /var/cache/apt/archives/lock >/dev/null 2>&1; do
     echo "Waiting for lock to be released ..."
     sleep 10
 done
-dpkg -i docker-ce_18.03.1~ce-0~ubuntu_amd64.deb
+dpkg -i docker-ce_18.06.0~ce~3-0~ubuntu_amd64.deb
 while sudo fuser while sudo fuser /var/lib/dpkg/lock /var/lib/apt/lists/lock /var/cache/apt/archives/lock >/dev/null 2>&1; do
     echo "Waiting for lock to be released ..."
     sleep 10
